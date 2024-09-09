@@ -35,7 +35,21 @@ h1 {
 }
 
 button {
-    font-size: 18px; /* Make the button text larger */
-    padding: 12px 20px; /* Increase the padding around the button */
-    width: 100%; /* Make the button take the full width of the container */
+    font-size: 18px; 
+    padding: 12px 25px; 
+    width: auto;
+    max-width: 200px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    text-align: center;
+    display: block; 
+    margin: 20px auto;
 }
+
+button:hover {
+    background-color: #0056b3; /* Darken the button color on hover */
+}
+
