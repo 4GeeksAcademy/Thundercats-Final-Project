@@ -2,6 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     return {
         store: {
             message: null,
+            user: null,  // This will store the logged-in user info
             demo: [
                 {
                     title: "FIRST",
@@ -15,6 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 }
             ]
         },
+        
         actions: {
             // Use getActions to call a function within a function
             exampleFunction: () => {
@@ -81,6 +83,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error("Error removing favorite game:", error);
 				}
 			},
+
+            login: async (email, password) => {
+                try {
+                    const response = await fetch("/api/login", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ email, password }),
+                    });
+                    const data = await response.json();
+                    if (data.token) {
+                        localStorage.setItem("token", data.token);
+                        setStore({ user: data.user });  // Save the logged-in user's data
+                        return true;
+                    }
+                } catch (error) {
+                    console.error("Error logging in", error);
+                }
+                return false;
+            },
+            
 			
         }
     };

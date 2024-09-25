@@ -30,7 +30,7 @@ export const SignUp = () => {
           <input
             type="text"
             name="Full_Name"
-            value={formData.firstName}
+            value={formData.name}
             onChange={handleChange}
             style={{ width: '100%', padding: '8px' }}
             required
