@@ -15,7 +15,7 @@ export const ContactUs = () => {
     };
 
     return (
-        <div className="container">
+        <div className="container text-white">
             <div className="form-wrapper">
                 <h1 className="text-center">Contact Us</h1>
                 <form onSubmit={handleSubmit}>

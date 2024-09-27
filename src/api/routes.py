@@ -244,6 +244,12 @@ def add_games():
         # release_date:"2006-12-11"
         # freetogame_profile_url:"https://www.freetogame.com/darkorbit"}]
 
+# This would be nice to have...
+# @app.route('/logout')
+# def logout():
+#     session.clear()
+#     return redirect(url_for('/Login'))
+
 
 
 

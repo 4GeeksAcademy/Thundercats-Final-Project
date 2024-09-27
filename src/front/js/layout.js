@@ -12,6 +12,7 @@ import { ContactUs } from "./pages/ContactUs";
 import injectContext from "./store/appContext";
 import GameCard from "./component/IndividualCardView";
 import { Favorites } from "./pages/favorites";
+import {AboutUs} from "./component/aboutUs";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -34,7 +35,7 @@ const Layout = () => {
                         <Route element={<Single />} path="/single/:theid" />
                         <Route element={<h1>Not found!</h1>} path="*" />
                         <Route path="/contact" element={<ContactUs />} />
-                        {/* <Route path="/about" element={<AboutUs />} /> */}
+                        <Route path="/about" element={<AboutUs />} />
                         <Route path="/game/:id" element={<GameCard />} />
                     </Routes>
                     <Footer />

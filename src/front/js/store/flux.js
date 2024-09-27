@@ -162,7 +162,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             token: null,
             // list of games, user
             games: [], // list because there will be multiple games per user
-            user: {},   // object because there is just one user
+            user: null,   // object because there is just one user
             favorites: [] //declaring or INITIALIZING an empty array
         },
         actions: {

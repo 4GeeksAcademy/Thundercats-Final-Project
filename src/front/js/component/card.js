@@ -30,7 +30,7 @@ export const Card = (props) => {
   return (
     <div className="card bg-dark text-white" style={{ width: "15rem" }}>
       {/* onClick={() => { navigate(`/game/${id}`) }} */}
-      <Link to={`/game/${id}`}>
+      <Link to={`/game/${game_id}`}>
         <img
           src={imgurl}
           className="card-img-top"
@@ -38,7 +38,7 @@ export const Card = (props) => {
         />
       </Link>
       <div className="card-body">
-        <Link to={`/game/${id}`}>
+        <Link to={`/game/${game_id}`}>
           <h5 className="card-title">
             {title}
           </h5>
@@ -59,4 +59,52 @@ export const Card = (props) => {
     </div>
   );
 };
+// import React, { useEffect, useState, useContext } from "react";
+// import "../../styles/card.css";
+// import { useNavigate, Link } from "react-router-dom";
+// import { Context } from "../store/appContext";
+
+// export const FavoriteCard = (props) => {
+//   const { store, actions } = useContext(Context);
+//   const { title, description, imgurl, genre, game_id } = props;
+//   const navigate = useNavigate();
+//   const [isFavorited, setIsFavorited] = useState(false);
+//   const favoriteGame = store.user?.favorite_game?.find((item) => item.game_id === game_id);
+
+//   useEffect(() => {
+//     if (favoriteGame) {
+//       setIsFavorited(true); // If the game is in favorites, mark as favorited
+//     }
+//   }, [store.favorites, favoriteGame]);
+
+//   // Remove the favorite if it exists
+//   const removeFavorite = () => {
+//     if (favoriteGame) {
+//       actions.deleteFavorites(favoriteGame.id);
+//       setIsFavorited(false); // Update state to reflect removal
+//     }
+//   };
+
+//   // Only render this card if the game is in favorites
+//   if (!isFavorited) return null;
+
+//   return (
+//     <div className="card bg-dark text-white" style={{ width: "15rem" }}>
+//       <Link to={`/game/${game_id}`}>
+//         <img src={imgurl} className="card-img-top" alt="Game Thumbnail" />
+//       </Link>
+//       <div className="card-body">
+//         <Link to={`/game/${game_id}`}>
+//           <h5 className="card-title">{title}</h5>
+//         </Link>
+//         <p className="game-genre">{genre}</p>
+//         <p className="card-text">{description}</p>
+//         {/* Button to remove from favorites */}
+//         <button onClick={removeFavorite}>
+//           Remove from Favorites
+//         </button>
+//       </div>
+//     </div>
+//   );
+// };
 

@@ -9,7 +9,7 @@ const GameCard = () => {
     const { store, actions } = useContext(Context);
     const [currentGame, setCurrentGame] = useState(null)
     useEffect(() => {
-        setCurrentGame(store.games[id])
+        setCurrentGame(store.games[store.games.findIndex(game => game.id == id)])
     }, [])
     return (
         <>
@@ -19,16 +19,16 @@ const GameCard = () => {
                     src={currentGame?.thumbnail}
                     className="card-img-top"
                     alt="..."
-                    style={{width: "50rem"}}
+                    style={{ width: "50rem" }}
                 />
                 <div className="text-center text-light">
-                <p>{currentGame?.genre}</p>
-                <p>{currentGame?.short_description}</p>
-                <p>{currentGame?.release_date}</p>
-                <p>{currentGame?.platform}</p>
-                <p>{currentGame?.developer}</p>
-                <p>{currentGame?.publisher}</p>
-                <a>{currentGame?.game_url}</a>
+                    <p> Genre: {currentGame?.genre}</p>
+                    <p>Info: {currentGame?.short_description}</p>
+                    <p>Release Date: {currentGame?.release_date}</p>
+                    <p>Platform(s): {currentGame?.platform}</p>
+                    <p>Developer: {currentGame?.developer}</p>
+                    <p>Publisher: {currentGame?.publisher}</p>
+                    <a>Url: {currentGame?.game_url}</a>
                 </div>
             </div>) : (<div class="d-flex justify-content-center">
                 <div class="spinner-border" role="status">

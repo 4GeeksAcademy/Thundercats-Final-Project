@@ -17,6 +17,14 @@ export const Home = () => {
   //   fetchGames();
   // }, []);
 
+  useEffect(() => {
+    // 
+    const getUser = async () => {
+      await actions.getUser();
+    };
+    getUser();
+  }, []);
+
   return (
     <>
       {isLoading ? (
