@@ -1,0 +1,41 @@
+.container {
+    max-width: 700px; /* Adjust the maximum width of the form */
+    margin: 0 auto; /* Center the form on the page */
+    padding: 20px; /* Add padding around the form */
+}
+
+.form-wrapper {
+    padding: 30px; /* Add padding inside the form */
+    border-radius: 8px; /* Rounded corners */
+    
+}
+
+h1 {
+    font-size: 28px; /* Increase the font size of the heading */
+    margin-bottom: 20px; /* Add space below the heading */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Add space between form fields */
+}
+
+.form-control {
+    font-size: 18px; /* Increase the font size of the input fields */
+    padding: 12px; /* Add padding inside the input fields */
+    width: 100%; /* Make input fields take the full width of the container */
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+}
+
+.small-input {
+    max-width: 400px; /* Make name and email fields smaller */
+}
+
+.large-textarea {
+    height: 150px; /* Make the message textarea larger */
+}
+
+button {
+    font-size: 18px; /* Make the button text larger */
+    padding: 12px 20px; /* Increase the padding around the button */
+    width: 100%; /* Make the button take the full width of the container */
+}

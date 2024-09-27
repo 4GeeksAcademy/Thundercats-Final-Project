@@ -1,5 +1,6 @@
 {
 	"name": "react-hello-webapp",
+	"proxy": "https://obscure-telegram-jjrp5j7x5px4cqpgj-3001.app.github.dev/api/games",
 	"engines": {
 		"node": "16.x"
 	},

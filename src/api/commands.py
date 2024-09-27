@@ -1,6 +1,7 @@
 
 import click
-from api.models import db, User
+from api.models import db, User, Game
+import requests
 
 """
 In this file, you can add as many commands as you want using the @app.cli.command decorator
@@ -28,6 +29,33 @@ def setup_commands(app):
             print("User: ", user.email, " created.")
 
         print("All test users created")
+
+    # pipenv run flask load-games
+    @app.cli.command("load-games")
+    def load_games():
+        url = "https://free-to-play-games-database.p.rapidapi.com/api/games"
+
+        headers = {
+            "x-rapidapi-key": "b492631b76msh4e7f5b9fde3496ep1db7d6jsn2021552b0764",
+            "x-rapidapi-host": "free-to-play-games-database.p.rapidapi.com"
+        }
+
+        response = requests.get(url, headers=headers)
+        game_data = response.json()
+        for game in game_data:
+            db.session.add(Game(
+                id=game.get("id"),
+                name=game.get("title"),
+                genre=game.get("genre"),
+                thumbnail=game.get("thumbnail"),
+                short_description=game.get("short_description"),
+                game_url=game.get("game_url"),
+                publisher = game.get("publisher"),
+                release_date = game.get("release_date"),
+                platform = game.get("platform"),
+                developer = game.get("developer")
+            ))
+        db.session.commit()
 
     @app.cli.command("insert-test-data")
     def insert_test_data():
